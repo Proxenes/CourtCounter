@@ -7,8 +7,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Variable used to store the total score for Team A
-    int teamAScore;
+    // Variables used to store the total score for Team A and Team B
+    int teamAScore = 0;
+    int teamBScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the value of teamAScore to the text value of the
         // team_a_score TextView
-        TextView teamAScoreTextView = findViewById(R.id.team_a_score);
-        teamAScore = Integer.parseInt(teamAScoreTextView.getText().toString());
+        // TextView teamAScoreTextView = findViewById(R.id.team_a_score);
+        // teamAScore = Integer.parseInt(teamAScoreTextView.getText().toString());
     }
 
     /**
      * Displays the total score for Team A in the team_a_score TextView
      */
     public void displayForTeamA(int score) {
-        TextView priceTextView=(findViewById(R.id.team_a_score));
-        priceTextView.setText(String.valueOf(score));
+        TextView teamAScoreTextView = (findViewById(R.id.team_a_score));
+        teamAScoreTextView.setText(String.valueOf(score));
     }
 
     /**
@@ -57,5 +58,40 @@ public class MainActivity extends AppCompatActivity {
     public void teamAFreeThrow(View view) {
         teamAScore += 1;
         displayForTeamA(teamAScore);
+    }
+
+    /**
+     * Displays the total score for Team B in the team_a_score TextView
+     */
+    public void displayForTeamB(int score) {
+        TextView teamAScoreTextView = (findViewById(R.id.team_b_score));
+        teamAScoreTextView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Increases teamBScore by 3 then updates the team_B_score TextView
+     * by calling the displayForTeamB method
+     */
+    public void teamBThreePoints(View view) {
+        teamBScore += 3;
+        displayForTeamB(teamBScore);
+    }
+
+    /**
+     * Increases teamBScore by 2 then updates the team_B_score TextView
+     * by calling the displayForTeamB method
+     */
+    public void teamBTwoPoints(View view) {
+        teamBScore += 2;
+        displayForTeamB(teamBScore);
+    }
+
+    /**
+     * Increases teamBScore by 1 then updates the team_B_score TextView
+     * by calling the displayForTeamB method
+     */
+    public void teamBFreeThrow(View view) {
+        teamBScore += 1;
+        displayForTeamB(teamBScore);
     }
 }
