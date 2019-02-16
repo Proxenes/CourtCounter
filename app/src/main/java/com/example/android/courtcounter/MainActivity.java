@@ -12,9 +12,18 @@ public class MainActivity extends AppCompatActivity {
     int teamBScore = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle scores) {
+        super.onCreate(scores);
         setContentView(R.layout.activity_main);
+
+        // Restores the scores of each team if the activity is destroyed and recreated
+        if(scores != null) {
+            teamAScore = scores.getInt("teamAScore");
+            teamBScore = scores.getInt("teamBScore");
+
+            displayForTeamA(teamAScore);
+            displayForTeamB(teamBScore);
+        }
 
         // Test functionality of below method(s)
         // displayForTeamA(8);
@@ -23,6 +32,23 @@ public class MainActivity extends AppCompatActivity {
         // team_a_score TextView
         // TextView teamAScoreTextView = findViewById(R.id.team_a_score);
         // teamAScore = Integer.parseInt(teamAScoreTextView.getText().toString());
+    }
+
+    /**
+     * Saves the scores of each team to the scores Bundles to be
+     * restored if the activity is destroyed
+     */
+    protected void onSaveInstanceState(Bundle scores) {
+        super.onSaveInstanceState(scores);
+        scores.putInt("teamAScore", teamAScore);
+        scores.putInt("teamBScore", teamBScore);
+    }
+
+    /**
+     * Overrides back button to not completely exit the app
+     */
+    public void onBackPressed(){
+        moveTaskToBack(true);
     }
 
     /**
@@ -69,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Increases teamBScore by 3 then updates the team_B_score TextView
+     * Increases teamBScore by 3 then updates the team_b_score TextView
      * by calling the displayForTeamB method
      */
     public void teamBThreePoints(View view) {
@@ -78,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Increases teamBScore by 2 then updates the team_B_score TextView
+     * Increases teamBScore by 2 then updates the team_b_score TextView
      * by calling the displayForTeamB method
      */
     public void teamBTwoPoints(View view) {
@@ -87,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Increases teamBScore by 1 then updates the team_B_score TextView
+     * Increases teamBScore by 1 then updates the team_b_score TextView
      * by calling the displayForTeamB method
      */
     public void teamBFreeThrow(View view) {

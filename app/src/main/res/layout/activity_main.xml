@@ -8,16 +8,16 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
             android:gravity="center_horizontal"
+            android:padding="4dp"
             android:text="@string/team_a"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -26,8 +26,8 @@
             android:id="@+id/team_a_score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
             android:gravity="center_horizontal"
+            android:padding="4dp"
             android:text="@string/team_a_score"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -37,38 +37,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="@string/three_point_button"
-            android:onClick="teamAThreePoints"/>
+            android:onClick="teamAThreePoints"
+            android:text="@string/three_point_button" />
 
         <Button
             android:id="@+id/team_a_2_points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="@string/two_point_button"
-            android:onClick="teamATwoPoints" />
+            android:onClick="teamATwoPoints"
+            android:text="@string/two_point_button" />
 
         <Button
             android:id="@+id/team_a_free_throw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="@string/free_throw_button"
-            android:onClick="teamAFreeThrow"/>
+            android:onClick="teamAFreeThrow"
+            android:text="@string/free_throw_button" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
             android:gravity="center_horizontal"
+            android:padding="4dp"
             android:text="@string/team_b"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -77,8 +77,8 @@
             android:id="@+id/team_b_score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
             android:gravity="center_horizontal"
+            android:padding="4dp"
             android:text="@string/team_a_score"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -88,24 +88,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="@string/three_point_button"
-            android:onClick="teamBThreePoints"/>
+            android:onClick="teamBThreePoints"
+            android:text="@string/three_point_button" />
 
         <Button
             android:id="@+id/team_b_2_points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="@string/two_point_button"
-            android:onClick="teamBTwoPoints" />
+            android:onClick="teamBTwoPoints"
+            android:text="@string/two_point_button" />
 
         <Button
             android:id="@+id/team_b_free_throw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="@string/free_throw_button"
-            android:onClick="teamBFreeThrow"/>
+            android:onClick="teamBFreeThrow"
+            android:text="@string/free_throw_button" />
 
     </LinearLayout>
 
